@@ -5,13 +5,9 @@ import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
 const LoginPage = () => {
-    
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const dispatch = useDispatch()
-
-  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -28,15 +24,15 @@ const LoginPage = () => {
       /* Get data after fetching */
       const loggedIn = await response.json()
 
-      if (loggedIn) {
-        dispatch (
-          setLogin({
-            user: loggedIn.user,
-            token: loggedIn.token
-          })
-        )
-        navigate("/")
-      }
+    //   if (loggedIn) {
+    //     dispatch (
+    //       setLogin({
+    //         user: loggedIn.user,
+    //         token: loggedIn.token
+    //       })
+    //     )
+    //     navigate("/")
+    //   }
 
     } catch (err) {
       console.log("Login failed", err.message)
